@@ -13,5 +13,5 @@ app.get('/', (req, res) => {
 });
 
 app.get('/propiedades', (req, res) => {
-  propiedades(res);
+  propiedades(req, res);
 });
