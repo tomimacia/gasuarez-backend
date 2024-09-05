@@ -57,7 +57,7 @@ export const getPropData = async (url, page) => {
   };
   const operations = await getOperations();
   const Images = await page.$$eval('div #mCSB_1_container img', (items) => {
-    return items.map((item) => item.src); // Extrae el atributo src de cada imagen
+    return items.map((item) => item.getAttribute('data-big')); // Extrae el atributo src de cada imagen
   });
   const basico = await getListaData('ficha_informacion_basica');
   const superficies = await getListaData('ficha_superficies');
