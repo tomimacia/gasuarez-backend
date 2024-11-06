@@ -1,6 +1,7 @@
 import express from 'express';
 import { propiedades } from './propiedades.js';
 import cors from 'cors';
+import { status } from './status.js';
 const app = express();
 
 const port = process.env.PORT || 4000;
@@ -15,4 +16,7 @@ app.get('/', (req, res) => {
 
 app.get('/propiedades', (req, res) => {
   propiedades(req, res);
+});
+app.get('/status', (req, res) => {
+  status(req, res);
 });

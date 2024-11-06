@@ -6,7 +6,6 @@ export const getPropData = async (url, page) => {
   await page.waitForSelector('.title-address');
   const href = url;
   const Titulo = await page.$eval('.title-address', (el) => el.textContent);
-  console.log(Titulo);
   const detalles = await page.$$eval(
     '#ficha_detalle_cuerpo .ficha_detalle_item',
     (items) => {
